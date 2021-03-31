@@ -2,7 +2,7 @@ import React from 'react'
 import {Card,Form,Button} from 'react-bootstrap';
 const TrangDangNhap = () => {
 	return(	
-			<div className="card" style={{ width: '70%',padding:'70px',margin:'auto'}}>
+			<div className="card" style={{ width: '50%',padding:'70px',margin:'auto'}}>
 				<div className="card text-center" style={{border:'none'}} >
 					<div className="card-header" style={{background:'white'}} >
 						
