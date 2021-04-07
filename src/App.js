@@ -1,25 +1,25 @@
 import React from 'react'
-import './App.css';
-import TrangDangNhap from './components/TrangDangNhap';
-import TrangQuenMatKhau from './components/TrangQuenMatKhau'
-import NavigationBar from './components/NavigationBar' 
+import './App.scss';
+import TrangDangNhap from './screens/TrangDangNhap';
+import TrangQuenMatKhau from './screens/TrangQuenMatKhau';
+import TrangChu from './screens/TrangChu';
+import NavigationBar from './components/NavigationBar';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Layout from './components/Layout';
 
 function App() {
   return (
-    <React.Fragment>     
+    <React.Fragment>  
+    <NavigationBar/>   
         <Layout>
-            <Router>
-            
+            <Router>           
               <Switch>
                 <Route exact path="/" component={TrangDangNhap}/>
                 <Route path="/quenmatkhau" component={TrangQuenMatKhau}/>
-              </Switch>
-             
+                <Route path="/Home" component={TrangChu}/>
+              </Switch>   
             </Router>
         </Layout>
-      
     </React.Fragment>
   );
 }
