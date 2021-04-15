@@ -6045,6 +6045,7 @@ a.close.disabled {
 .carousel-item-prev,
 .carousel-item.active {
   display: block;
+
 }
 .active.carousel-item-right,
 .carousel-item-next:not(.carousel-item-left) {
@@ -6132,7 +6133,7 @@ a.close.disabled {
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   display: inline-block;
-  width: 20px;
+  width: 90px;
   height: 20px;
   background: 50%/100% 100% no-repeat;
 }

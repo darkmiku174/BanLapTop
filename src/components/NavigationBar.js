@@ -4,8 +4,8 @@ import { FaSearch,FaHome,FaUserAlt,FaShoppingBag } from 'react-icons/fa';
 
 const NavigationBar = () => {
   return(
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">  
-    <div class="mx-auto order-0">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" >  
+    <div class="mx-auto order-0" >
         <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
