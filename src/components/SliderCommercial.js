@@ -1,7 +1,7 @@
 import React from 'react';
 import {Carousel,Container} from 'react-bootstrap';
 
-const Slider = () => {
+const SliderCommercial = () => {
   return(
   	<div className="carousel-container" style={{margin:"auto",width:"70%"}}>
 		<Carousel>
@@ -44,4 +44,4 @@ const Slider = () => {
 		</div>
 	)
   }
-export default Slider;
+export default SliderCommercial;
