@@ -18,7 +18,9 @@ const TrangChu = () => {
 					</div>
 					<SliderProduct/>
 			</div>
+			<a href="/xemtatca">
 			 <button type="submit" class="btn btn-primary" style={{marginLeft:"43%",marginTop:'2rem'}}>Xem tất cả</button>
+			</a>
 		</div>
 	</div>
 	)

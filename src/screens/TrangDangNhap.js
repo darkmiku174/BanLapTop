@@ -24,7 +24,9 @@ const TrangDangNhap = () => {
 						</Form>
 					</div>
 				<div className="form-group">			  
+				  <a href="/trangchu">
 				  <input type="submit" className="form-control" id="3" value="Đăng nhập" style={{background:'none'}}></input>
+				  </a>
 				</div>
 				<div className="form-group">	
 				  <input type="submit" className="form-control" id="4" value="Đăng Ký" ></input>
