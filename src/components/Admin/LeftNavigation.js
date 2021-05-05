@@ -1,16 +1,17 @@
 import React from 'react'
+import QLDonHang from '../Admin/QLDonHang';
+import QLSanPham from '../Admin/QLSanPham';
 import { FaSearch,FaHome,FaUserAlt,FaShoppingBag } from 'react-icons/fa';
+
 const LeftNavigation = () =>{
 	return(
-		<div class="sidenav">
-		  <a href="#about">Quản lý đơn hàng</a>
-		  <div class="dropdown-container">
-		    <a href="#">Tất cả đơn hàng</a>
-		    <a href="#">Đơn hủy</a>
-		    <a href="#">Trả hảng/Hoàn tiền</a>
-		  </div>
-		  <a href="#contact">Quản lý sản phẩm</a>
-		</div>
+		<p>1</p>
+		/*<div>
+			<div class="sidenav">
+			  <a href="#donhang" onClick={() => setActive("QLDH")}>Quản lý đơn hàng</a>
+			  <a href="#sanpham" onClick={() => setActive("QLSP")}>Quản lý sản phẩm</a>
+			</div>
+		</div>*/
 	)
 }
 export default LeftNavigation;

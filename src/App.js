@@ -9,7 +9,7 @@ import TrangDatHang from './screens/TrangDatHang';
 import TrangTaiKhoan from './screens/TrangTaiKhoan';
 import TrangDangKy from './screens/TrangDangKy';
 import TrangGioHang from './screens/TrangGioHang';
-
+import AdminTrangThemSP from './screens/AdminTrangThemSP';
 import AdminTrangChu from './screens/AdminTrangChu';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -25,13 +25,14 @@ function App() {
               	<Route exact path="/" component={TrangChu}/>
                 <Route path="/dangnhap" component={TrangDangNhap}/>
                 <Route path="/quenmatkhau" component={TrangQuenMatKhau}/>
-                <Route path="/admin/home" component={AdminTrangChu}/>
+                <Route path="/admin" component={AdminTrangChu}/>
                 <Route path="/xemtatca" component={TrangXemTatCa}/>
                 <Route path="/dathang" component={TrangDatHang}/>
                 <Route path="/chitietsanpham" component={TrangXemChiTietSanPham}/>
                 <Route path="/dangky" component={TrangDangKy}/>
                 <Route path="/giohang" component={TrangGioHang}/>
                 <Route path="/taikhoan" component={TrangTaiKhoan}/>
+                <Route patH="/themsanpham" component={AdminTrangThemSP}/>
               </Switch>   
             </Router>
   

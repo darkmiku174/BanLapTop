@@ -18,12 +18,7 @@ const AdminNavigationBar = () => {
                 </li>
             </ul>
         </div>
-        <div class="buscar-caja">
-             <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
-             <a class="buscar-btn">
-              <FaSearch/>
-             </a>
-          </div>
+       
     </nav>
     )
 	}
