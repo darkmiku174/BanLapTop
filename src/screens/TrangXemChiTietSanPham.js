@@ -1,15 +1,18 @@
 import React from 'react';
+import NavigationBar from '../components/NavigationBar';
 import {Row,Col,Container,Button} from 'react-bootstrap';
 const TrangXemChiTietSanPham = () => {
 	return(
+		<div>
+		<NavigationBar/>
 			<Container style={{margin:'auto',padding:'2rem',marginTop:'2rem'}}>
 				<Row>
 					<Col sm={6}>
 						<Container>
-						<img src="https://phucanhcdn.com/media/product/39638_gaming_legion_5_ha5.jpg" alt="Lenovo-Legion"
-						width="100%"
-						height="70%"
-						/>
+							<img src="https://phucanhcdn.com/media/product/39638_gaming_legion_5_ha5.jpg" alt="Lenovo-Legion"
+							width="100%"
+							height="70%"
+							/>
 						</Container>
 						<Button style={{marginTop:'0.7rem',marginLeft:'10rem'}}>Thêm vào giỏ hàng</Button>
 					</Col>
@@ -37,6 +40,7 @@ const TrangXemChiTietSanPham = () => {
 					</Col>
 				</Row>
 			</Container>
+		</div>
 		)
 }
 export default TrangXemChiTietSanPham;

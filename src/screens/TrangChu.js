@@ -8,6 +8,7 @@ import {Button } from 'react-bootstrap';
 const TrangChu = () => {
   return(
   	<div>
+  		<NavigationBar/>
 		<SliderCommercial/>
 		<div style={{margin:'auto',marginBottom:'3rem'}}>
 			<div className="container-flex" style={{marginTop:"2rem"}}>
@@ -18,9 +19,9 @@ const TrangChu = () => {
 					</div>
 					<SliderProduct/>
 			</div>
-			<a href="/xemtatca">
-			 <button type="submit" class="btn btn-primary" style={{marginLeft:"43%",marginTop:'2rem'}}>Xem tất cả</button>
-			</a>
+		<a href="/xemtatca">
+			<button type="submit" class="btn btn-primary" style={{marginLeft:"43%",marginTop:'2rem'}}>Xem tất cả</button>
+		</a>
 		</div>
 	</div>
 	)

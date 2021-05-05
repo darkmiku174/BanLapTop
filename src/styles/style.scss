@@ -28,3 +28,39 @@
   line-height: 54px; 
   
 }
+.menu-button{
+  background-color: transparent;
+  color: #fff;
+  padding:15px;
+  font-size: 15px;
+  cursor:pointer;
+}
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+.carousel-control-prev {
+  margin-left: -150px;
+
+}
+
+.carousel-control-next {
+  margin-right: -150px;
+ 
+}
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: black;
+}

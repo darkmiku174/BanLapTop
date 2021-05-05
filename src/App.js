@@ -6,26 +6,35 @@ import TrangChu from './screens/TrangChu';
 import TrangXemTatCa from './screens/TrangXemTatCa';
 import TrangXemChiTietSanPham from './screens/TrangXemChiTietSanPham';
 import TrangDatHang from './screens/TrangDatHang';
-import NavigationBar from './components/NavigationBar';
+import TrangTaiKhoan from './screens/TrangTaiKhoan';
+import TrangDangKy from './screens/TrangDangKy';
+import TrangGioHang from './screens/TrangGioHang';
+
+import AdminTrangChu from './screens/AdminTrangChu';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+
 import Layout from './components/Layout';
 
 function App() {
   return (
-    <React.Fragment>  
-    <NavigationBar/>   
-        <Layout>
+<React.Fragment>  
+ 
+   
             <Router>           
               <Switch>
-                <Route exact path="/" component={TrangDangNhap}/>
+              	<Route exact path="/" component={TrangChu}/>
+                <Route path="/dangnhap" component={TrangDangNhap}/>
                 <Route path="/quenmatkhau" component={TrangQuenMatKhau}/>
-                <Route path="/trangchu" component={TrangChu}/>
+                <Route path="/admin/home" component={AdminTrangChu}/>
                 <Route path="/xemtatca" component={TrangXemTatCa}/>
                 <Route path="/dathang" component={TrangDatHang}/>
                 <Route path="/chitietsanpham" component={TrangXemChiTietSanPham}/>
+                <Route path="/dangky" component={TrangDangKy}/>
+                <Route path="/giohang" component={TrangGioHang}/>
+                <Route path="/taikhoan" component={TrangTaiKhoan}/>
               </Switch>   
             </Router>
-        </Layout>
+  
     </React.Fragment>
   );
 }

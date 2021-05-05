@@ -3,7 +3,7 @@ import {Carousel,Container} from 'react-bootstrap';
 
 const SliderCommercial = () => {
   return(
-  	<div className="carousel-container" style={{margin:"auto",width:"70%"}}>
+  	<div style={{margin:"auto",width:"70%"}}>
 		<Carousel>
 		  <Carousel.Item>
 		    <img
