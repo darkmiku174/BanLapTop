@@ -11,6 +11,7 @@ import TrangDangKy from './screens/TrangDangKy';
 import TrangGioHang from './screens/TrangGioHang';
 import AdminTrangThemSP from './screens/AdminTrangThemSP';
 import AdminTrangChu from './screens/AdminTrangChu';
+import AdminTrangEditSanPham from './screens/AdminTrangEditSanPham';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Layout from './components/Layout';
@@ -32,7 +33,8 @@ function App() {
                 <Route path="/dangky" component={TrangDangKy}/>
                 <Route path="/giohang" component={TrangGioHang}/>
                 <Route path="/taikhoan" component={TrangTaiKhoan}/>
-                <Route patH="/themsanpham" component={AdminTrangThemSP}/>
+                <Route path="/themsanpham" component={AdminTrangThemSP}/>
+                <Route path="/suathongtin" component={AdminTrangEditSanPham}/>
               </Switch>   
             </Router>
   

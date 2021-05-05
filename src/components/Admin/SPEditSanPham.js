@@ -1,12 +1,12 @@
 import React from 'react';
 import AdminNavigationBar from '../Admin/AdminNavigationBar';
 import {Container,Row,Col,Button,Form} from 'react-bootstrap';
-const SPThemSanPham = () => {
+const SPEditSanPham = () => {
 	return(
 		<div>
 			<AdminNavigationBar/>
 			<Container style={{marginTop:'1rem'}}>
-				<h4>Thêm sản phẩm</h4>
+				<h4>Sửa thông tin</h4>
 				<div>
 		
 			<Container style={{margin:'auto',padding:'2rem',marginTop:'2rem'}}>
@@ -103,4 +103,4 @@ const SPThemSanPham = () => {
 		</div>
 		)
 }
-export default SPThemSanPham;
+export default SPEditSanPham;

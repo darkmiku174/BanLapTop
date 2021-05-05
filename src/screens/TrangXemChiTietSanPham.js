@@ -14,7 +14,7 @@ const TrangXemChiTietSanPham = () => {
 							height="70%"
 							/>
 						</Container>
-						<Button style={{marginTop:'0.7rem',marginLeft:'10rem'}}>Thêm vào giỏ hàng</Button>
+						<a href="/giohang"><Button style={{marginTop:'0.7rem',marginLeft:'10rem'}}>Thêm vào giỏ hàng</Button></a>
 					</Col>
 					<Col sm={6}>
 						<h3>Lenovo Legion 5 AMD</h3>

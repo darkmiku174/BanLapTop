@@ -133,7 +133,7 @@ const SPTatCaSanPham = () => {
 					      </td>
 
 					      <td style={{display:'flex',justifyContent:'space-evenly'}}>
-					      	<a href="#chitiet"><FaPen/></a>
+					      	<a href="/suathongtin"><FaPen/></a>
 					      	<a href="#chitiet"><FaTrash/></a>
 					      </td>
 
