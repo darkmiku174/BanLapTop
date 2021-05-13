@@ -1,25 +1,42 @@
-import React from 'react';
+import React,{ useRef, useState } from 'react';
 import NavigationBar from '../components/NavigationBar';
 import SliderProduct from '../components/SliderProduct';
 import {Container} from "react-bootstrap";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css"
+import "swiper/components/navigation/navigation.min.css"
+
+// import Swiper core and required modules
+import SwiperCore, {
+  Pagination,Navigation
+} from 'swiper/core';
+// install Swiper modules
+SwiperCore.use([Pagination,Navigation]);
 const TrangXemTatCa = () => {
+
+	 // const pagination = {
+		// 	  "clickable": true,
+		// 	  "renderBullet": function (index, className) {
+		// 	          return '<span class=\"' + className + '\">' + (index + 1) + '</span>';
+		// 	        }
+		// 		}
   return(
-  	<div>
+  	<>
 	  	<NavigationBar/>
-	  	<Container style={{marginTop:'1rem'}}>
-		  	<h4>Máy tính xách tay</h4>
-		  	<div>
-			  	<div style={{display:'flex'}}>
-			  		<p>Sắp xếp theo: </p>
-			  		<a href="" style={{marginLeft:'2rem'}}><p>Giá tăng dần</p></a>
-			  		<a href="" style={{marginLeft:'2rem'}}><p>Giá giảm dần</p></a>
-			  	</div>
-			  	<div className='slider-container'>
-			  		<SliderProduct/>
-			  	</div>
-			</div>
+	  	<Container style={{marginTop:'2rem'}}>
+	  	    <Swiper pagination={{
+				  "type": "fraction"
+				}} navigation={true} className="mySwiper">
+			    <SwiperSlide><SliderProduct/></SwiperSlide>
+			    <SwiperSlide><SliderProduct/></SwiperSlide>
+			    <SwiperSlide><SliderProduct/></SwiperSlide>
+			    <SwiperSlide><SliderProduct/></SwiperSlide>
+		    </Swiper>
 		</Container>
-	</div>
+	</>
 	)
   }
 export default TrangXemTatCa;

@@ -6,7 +6,7 @@ const AdminNavigationBar = () => {
   return(
       <nav class="navbar navbar-expand-md navbar-dark bg-dark" >  
         <div class="mx-auto order-0" >
-            <a class="navbar-brand mx-auto" href="/">Navbar 2</a>
+            <a class="navbar-brand mx-auto" href="/">TLT</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>

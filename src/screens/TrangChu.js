@@ -3,25 +3,31 @@ import SliderCommercial from '../components/SliderCommercial';
 import SliderCompanyLogo from '../components/SliderCompanyLogo'
 import SliderProduct from '../components/SliderProduct';
 import NavigationBar from '../components/NavigationBar';
-import {Button } from 'react-bootstrap';
+import {Button,Container} from 'react-bootstrap';
 
 const TrangChu = () => {
   return(
-  	<div>
-  		<NavigationBar/>
-		<SliderCommercial/>
-		<div style={{margin:'auto',marginBottom:'3rem'}}>
-			<div className="container-flex" style={{marginTop:"2rem"}}>
-				<h4>Máy tính xách tay</h4>
-					<div style={{display:'flex',marginTop:"2rem",marginRight:"1rem"}}>
-						<h6 className="text-middle">Thương hiệu: </h6>
-						<SliderCompanyLogo/>
-					</div>
+  	<div style={{display:'flex',flexDirection:'column'}}>
+	  	<div className="header">
+	  	  	<NavigationBar/>
+	  	</div>
+
+	  	<div className="body">
+	  		<Container sttle={{display:'flex',flexDirection:'column'}}>
+				<SliderCommercial/>
+				<div>
+					<h4>Máy tính xách tay</h4>
+					<SliderCompanyLogo/>
 					<SliderProduct/>
-			</div>
-		<a href="/xemtatca">
-			<button type="submit" class="btn btn-primary" style={{marginLeft:"43%",marginTop:'2rem'}}>Xem tất cả</button>
-		</a>
+					<a href="/xemtatca">
+						<button type="submit" class="btn btn-primary" style={{marginLeft:"43%",marginTop:'3%'}}>Xem tất cả</button>
+					</a>
+				</div>
+			</Container>
+		</div>
+
+		<div className="footer">
+
 		</div>
 	</div>
 	)

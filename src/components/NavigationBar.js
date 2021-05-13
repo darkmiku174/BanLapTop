@@ -6,7 +6,7 @@ const NavigationBar = () => {
   return(
 <nav class="navbar navbar-expand-md navbar-dark bg-dark" >  
     <div class="mx-auto order-0" >
-        <a class="navbar-brand mx-auto" href="/home">Navbar 2</a>
+        <a class="navbar-brand mx-auto" href="/">TLT</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,17 +19,16 @@ const NavigationBar = () => {
             <li class="nav-item-1">
                 <div class="dropdown">
                   <span><a class="nav-link" href="/taikhoan"><FaUserAlt/></a></span>
-                  <div class="dropdown-content" style={{display:'flex',flexDirection:'column'}}>
-                     <a href="/taikhoan">Tài khoản</a>
-                  
-                      <a href="#">Đăng xuất</a>
+                  <div class="dropdown-content">
+                    <a href="/taikhoan">Tài khoản</a>
+                    <a href="#">Đăng xuất</a>
                   </div>
                 </div>
             </li>
         </ul>
     </div>
     <div class="buscar-caja">
-         <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
+         <input type="text" name="" class="buscar-txt" placeholder="Search..."/>
          <a class="buscar-btn">
           <FaSearch/>
          </a>

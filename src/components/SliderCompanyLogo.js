@@ -2,9 +2,10 @@ import React from 'react'
 import CompanyLogo from '../components/CompanyLogo'
 import {Carousel,Row,Col} from 'react-bootstrap'
 const SliderCompanyLogo =() => {
-	return(		
-		<div className="swiper-discount" style={{height:"4rem"}}>
-		 	<Row style={{marginLeft:'2rem',marginBottom:'6rem'}}>
+	return(	
+		<div style={{display:'flex',marginTop:'2rem'}}>
+			<h6 style={{padding:'20px 0'}}>thương hiệu :</h6>
+		 	<Row style={{marginLeft:'2rem',marginBottom:'1rem'}}>
 				<CompanyLogo/>
 		    	<CompanyLogo/>
 		    	<CompanyLogo/>
@@ -13,7 +14,7 @@ const SliderCompanyLogo =() => {
 		    	<CompanyLogo/>
 		    	<CompanyLogo/>
 		    	<CompanyLogo/>
-		    </Row>	 
+		    </Row>
 		</div>
 		)
 }
