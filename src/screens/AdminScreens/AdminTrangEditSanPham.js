@@ -1,5 +1,5 @@
 import React from 'react';
-import SPEditSanPham from '../components/Admin/SPEditSanPham';
+import SPEditSanPham from '../../components/Admin/SPEditSanPham';
 const AdminTrangEditSanPham = () => {
 	return(
 			<SPEditSanPham/>

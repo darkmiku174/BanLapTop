@@ -3,24 +3,14 @@ import { FaSearch } from 'react-icons/fa';
 import {Row,Col,Form,Container,InputGroup,Table} from 'react-bootstrap';
 const DHTatCaDonHang = () => {
 	return(
-			<Container style={{marginTop:'1rem'}}>
+			<Container style={{marginTop:'2rem'}}>
 				
-				<Row>
-					<Form>
-	                    <Form.Group as={Col}>
-	                        <InputGroup>
-	                            <InputGroup.Prepend >
-	                                <InputGroup.Text>
-	                                    <FaSearch/>
-	                                </InputGroup.Text>
-	                            </InputGroup.Prepend>
-	                            <Form.Control
-	                                type="text"
-	                                placeholder="Tìm kiếm đơn hàng"
-	                            />
-	                        </InputGroup>
-	                 	</Form.Group>
-	                </Form>
+				<Row style={{display:'flex',marginBottom:'4rem'}}>
+					<form onsubmit="event.preventDefault();" role="search" style={{border:'0.5px solid black'}}>
+					  <label for="search">Search for stuff</label>
+					  <input id="search" type="search" placeholder="Search..." autofocus required />
+					  <button type="submit">Go</button>    
+					</form>
 	            </Row>
 
 	            <Row>

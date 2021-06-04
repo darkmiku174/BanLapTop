@@ -1,10 +1,9 @@
 import React from 'react';
-import NavigationBar from '../components/NavigationBar';
 import {Col,Row,Container,Form,Button} from 'react-bootstrap'
 const TrangDatHang = () => {
   return(
   	<div>
-  	<NavigationBar/>
+  	
   	<Container style={{marginTop:'2rem'}}>
   		<h5 style={{marginBottom:'1rem'}}>Đặt hàng</h5>
   		<Row>

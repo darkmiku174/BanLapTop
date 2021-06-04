@@ -1,10 +1,9 @@
 import React from 'react'
-import NavigationBar from '../components/NavigationBar';
 import {Card,Form,Button} from 'react-bootstrap';
 const TrangQuenMatKhau= () => {
 	return(
 		<div>
-		<NavigationBar/>
+		
 		<div className="card" style={{ width: '50%',padding:'70px',margin:'auto'}}>
 				<div className="card text-center" style={{border:'none'}} >
 					<div className="card-header" style={{background:'white'}} >

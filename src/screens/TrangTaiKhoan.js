@@ -1,9 +1,8 @@
 import React from 'react'
-import NavigationBar from '../components/NavigationBar';
 const TrangTaiKhoan = () =>{
 	return(
 		 <div>
-     <NavigationBar/>
+     
         <title>Edit Profile</title>
         {/* Required meta tags */}
         <meta charSet="utf-8" />

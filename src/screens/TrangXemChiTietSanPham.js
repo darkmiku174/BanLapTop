@@ -1,10 +1,9 @@
 import React from 'react';
-import NavigationBar from '../components/NavigationBar';
 import {Row,Col,Container,Button} from 'react-bootstrap';
 const TrangXemChiTietSanPham = () => {
 	return(
 		<div>
-		<NavigationBar/>
+		
 			<Container style={{margin:'auto',padding:'2rem',marginTop:'2rem'}}>
 				<Row>
 					<Col sm={6}>

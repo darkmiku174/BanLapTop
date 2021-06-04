@@ -1,10 +1,9 @@
 import React from 'react';
-import NavigationBar from '../components/NavigationBar';
 const TrangGioHang = () =>
 {
     return (
       <div>
-  <NavigationBar/>
+  
   <meta charSet="UTF-8" />
   <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
   <link rel="stylesheet" href="./style.css" />
