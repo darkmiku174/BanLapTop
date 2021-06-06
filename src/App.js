@@ -23,7 +23,7 @@ function App() {
 <React.Fragment>  
             <Router>           
               <Switch>
-              
+              <Layout>
               	<Route exact path="/" component={TrangChu}/>
                 <Route path="/dangnhap" component={TrangDangNhap}/>
                 <Route path="/quenmatkhau" component={TrangQuenMatKhau}/>
@@ -36,7 +36,7 @@ function App() {
                 <Route path="/taikhoan" component={TrangTaiKhoan}/>
                 <Route path="/themsanpham" component={AdminTrangThemSP}/>
                 <Route path="/suathongtin" component={AdminTrangEditSanPham}/>
-                
+              </Layout>
               
               </Switch>
              

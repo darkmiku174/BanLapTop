@@ -18,7 +18,7 @@ const ProductItems = () =>{
 				 	Intel Core i7-1165G7, RAM 16GB, 512GB m.2 NVMe, 13.4" FHD+ IPS (1920x1200),  Intel Iris Xe, 52Wh, Silver
 				 </div>
 				 <div className="card-footer" style={{backgroundColor:'white'}}>
-				 	<Button style={{borderRadius:'4rem'}}>Thêm vài giỏ hàng</Button>
+				 	<Button style={{fontSize:'14px',backgroundColor:'#3ac9c9',borderRadius:'4rem',marginLeft:'0.5rem'}}>Thêm vào giỏ hàng</Button>
 				 </div>
 			</div>
 		</div>

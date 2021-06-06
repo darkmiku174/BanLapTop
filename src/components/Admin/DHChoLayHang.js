@@ -1,20 +1,17 @@
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
+import SearchBox from '../../components/SearchBox'
 import {Row,Col,Form,Container,InputGroup,Table} from 'react-bootstrap';
 const DHChoLayHang = () => {
 	return(
 			<Container style={{marginTop:'2rem'}}>
 				
-				<Row style={{display:'flex',marginBottom:'4rem'}}>
-					<form onsubmit="event.preventDefault();" role="search" style={{border:'0.5px solid gray'}}>
-					  <label for="search">Search for stuff</label>
-					  <input id="search" type="search" placeholder="Search..." autofocus required />
-					  <button type="submit">Go</button>    
-					</form>
+				<Row>
+					<SearchBox/>
 	            </Row>
 
 	            <Row>
-	            	<h3 style={{color:'black'}}>Đơn hàng</h3>
+	            	
 	            	<Table striped bordered hover style={{marginTop:'1rem'}}>
 					  <thead>
 					    <tr>

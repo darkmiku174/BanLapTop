@@ -11,14 +11,14 @@ const TrangChu = () => {
 	  		
 	  	</div>
 	  	<div className="body">
-	  		<Container sttle={{display:'flex',flexDirection:'column'}}>
+	  		<Container style={{display:'flex',flexDirection:'column'}}>
 				<SliderCommercial/>
 				<div>
 					<h4>Máy tính xách tay</h4>
 					<SliderCompanyLogo/>
 					<SliderProduct/>
 					<a href="/xemtatca">
-					<button type="submit" class="btn btn-primary" style={{marginLeft:"43%",marginTop:'3%'}}>Xem tất cả</button>
+					<button type="submit" class="btn btn-primary" style={{backgroundColor:'#3ac9c9',marginLeft:"43%",marginTop:'3%'}}>Xem tất cả</button>
 					</a>
 				</div>
 			</Container>
