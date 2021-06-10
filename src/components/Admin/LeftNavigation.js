@@ -1,10 +1,10 @@
 import React from 'react'
 import QLDonHang from '../Admin/QLDonHang';
 import QLSanPham from '../Admin/QLSanPham';
-import { FaSearch,FaHome,FaUserAlt,FaShoppingBag } from 'react-icons/fa';
+import { FaSearch, FaHome, FaUserAlt, FaShoppingBag } from 'react-icons/fa';
 
-const LeftNavigation = () =>{
-	return(
+const LeftNavigation = () => {
+	return (
 		<p>1</p>
 		/*<div>
 			<div class="sidenav">

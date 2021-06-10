@@ -1,49 +1,40 @@
-import React from 'react'
-import './App.scss';
-import TrangDangNhap from './screens/TrangDangNhap';
-import TrangQuenMatKhau from './screens/TrangQuenMatKhau';
-import TrangChu from './screens/TrangChu';
-import TrangXemTatCa from './screens/TrangXemTatCa';
-import TrangXemChiTietSanPham from './screens/TrangXemChiTietSanPham';
-import TrangDatHang from './screens/TrangDatHang';
-import TrangTaiKhoan from './screens/TrangTaiKhoan';
-import TrangDangKy from './screens/TrangDangKy';
-import Footer from './components/Footer';
-import TrangGioHang from './screens/TrangGioHang';
-import AdminTrangThemSP from './screens/AdminScreens/AdminTrangThemSP';
-import AdminTrangChu from './screens/AdminScreens/AdminTrangChu';
-import AdminTrangEditSanPham from './screens/AdminScreens/AdminTrangEditSanPham';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Layout from "./components/User/Layout"
 
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import routes from './routes';
 
-import Layout from './components/Layout';
+class App extends Component {
+    render() {
+        return (
+            <Router>
+                <Layout>
+                    <div className="App">
+                        {this.showContentMenus(routes)}
+                    </div>
+                </ Layout>
+            </Router>
+        );
+    }
 
-function App() {
-  return (
-<React.Fragment>  
-            <Router>           
-              <Switch>
-              <Layout>
-              	<Route exact path="/" component={TrangChu}/>
-                <Route path="/dangnhap" component={TrangDangNhap}/>
-                <Route path="/quenmatkhau" component={TrangQuenMatKhau}/>
-                <Route path="/admin" component={AdminTrangChu}/>
-                <Route path="/xemtatca" component={TrangXemTatCa}/>
-                <Route path="/dathang" component={TrangDatHang}/>
-                <Route path="/chitietsanpham" component={TrangXemChiTietSanPham}/>
-                <Route path="/dangky" component={TrangDangKy}/>
-                <Route path="/giohang" component={TrangGioHang}/>
-                <Route path="/taikhoan" component={TrangTaiKhoan}/>
-                <Route path="/themsanpham" component={AdminTrangThemSP}/>
-                <Route path="/suathongtin" component={AdminTrangEditSanPham}/>
-              </Layout>
-              
-              </Switch>
-             
-            </Router>            
-    </React.Fragment>
+    showContentMenus = (routes) => {
+        var result = null;
+        if (routes.length > 0) {
+            result = routes.map((route, index) => {
+                return (
+                    <Route
+                        key={index}
+                        path={route.path}
+                        exact={route.exact}
+                        component={route.main}
+                        render={route.render}
+                    />
+                );
+            });
+        }
+        return <Switch>{result}</Switch>;
+    }
 
-  );
 }
 
 export default App;
