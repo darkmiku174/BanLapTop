@@ -41,7 +41,7 @@ class TrangXemChiTietSanPham extends Component {
 						<Col sm={6}>
 							<Container>
 								<img src={product.HinhAnh} alt={product.TenSP}
-									width="100%"
+									width="70%"
 									height="70%"
 								/>
 							</Container>
@@ -49,17 +49,18 @@ class TrangXemChiTietSanPham extends Component {
 						</Col>
 						<Col sm={6}>
 							<h3>{product.TenSP}</h3>
-							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>Vi xử lí:  </p> <p>{product.CPU}</p></div>
-							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>Màn hình:  </p> <p>{product.ManHinh}</p></div>
-							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>Độ phủ màu:  </p> <p>{product.DoPhuMau}</p></div>
-							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>RAM:  </p> <p>{product.RAM}</p></div>
-							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>Card đồ họa:  </p> <p>{product.VGA}</p></div>
-							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>Lưu trữ:  </p> <p>{product.BoNhoLuuTru}</p></div>
-							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>Pin:  </p> <p>{product.Pin}</p></div>
-							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>Cổng kết nối:  </p> <p> {product.CongKetNoi}</p></div>
-							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>Cận nặng:  </p> <p>{product.CanNang}</p></div>
-							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>Hệ điều hành:  </p> <p>{product.HeDieuHanh}</p></div>
-							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>Màu sắc: </p> <p> {product.MauSac}</p></div>
+							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>Vi xử lí:  </p> <p style={{marginLeft:'1rem'}}>{product.CPU}</p></div>
+							<div style={{display:'flex',marginTop:'0.5rem'}}><p style={{ fontWeight: 'bold' }}>Màn hình:  </p> 	<p style={{marginLeft:'1rem'}}>{product.ManHinh}</p></div>
+							<div style={{display:'flex',marginTop:'0.5rem'}}>><p style={{ fontWeight: 'bold' }}>Độ phủ màu:</p> <p style={{marginLeft:'1rem'}}>{product.DoPhuMau}</p></div>
+							<div style={{display:'flex',marginTop:'0.5rem'}}><p style={{ fontWeight: 'bold' }}>RAM:  </p> <p style={{marginLeft:'1rem'}}>{product.RAM}</p></div>
+							<div style={{display:'flex',marginTop:'0.5rem'}}>><p style={{ fontWeight: 'bold' }}>Card đồ họa:  </p> <p style={{marginLeft:'1rem'}}>{product.VGA}</p></div>
+							<div style={{display:'flex',marginTop:'0.5rem'}}><p style={{ fontWeight: 'bold' }}>Lưu trữ:  </p> <p style={{marginLeft:'1rem'}}>{product.BoNhoLuuTru}</p></div>
+							<div style={{display:'flex',marginTop:'0.5rem'}}><p style={{ fontWeight: 'bold' }}>Pin:  </p> <p style={{marginLeft:'1rem'}}>{product.Pin}</p></div>
+							<div style={{display:'flex',marginTop:'0.5rem'}}><p style={{ fontWeight: 'bold' }}>Cổng kết nối:  </p> <p style={{marginLeft:'1rem'}}> {product.CongKetNoi}</p></div>
+							<div style={{display:'flex',marginTop:'0.5rem'}}><p style={{ fontWeight: 'bold' }}>Cận nặng:  </p> <p style={{marginLeft:'1rem'}}>{product.CanNang}</p></div>
+							<div style={{display:'flex',marginTop:'0.5rem'}}><p style={{ fontWeight: 'bold' }}>Hệ điều hành:  </p> <p style={{marginLeft:'1rem'}}>{product.HeDieuHanh}</p></div>
+							<div style={{display:'flex',marginTop:'0.5rem'}}><p style={{ fontWeight: 'bold' }}>Màu sắc: </p> <p style={{marginLeft:'1rem'}}> {product.MauSac}</p></div>
+							<Button style={{ marginTop: '1rem',marginLeft:'20%' }} onClick={()=> this.onAddToCart(product)}>Thêm vào giỏ hàng</Button>
 						</Col>
 					</Row>
 				</Container>

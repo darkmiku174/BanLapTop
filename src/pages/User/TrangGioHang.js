@@ -25,6 +25,10 @@ class TrangGioHang extends Component {
                             }}>
                                 {product.product.TenSP}
                             </p>
+                            <div style={{display:'flex'}}>
+                                <p>Đơn giá:</p>
+                                <p style={{marginLeft:'1rem'}}>29000000</p>
+                            </div>
                             <p>x{product.quantity}</p>
                             <a href="#">Xóa</a>
                         </Col>
