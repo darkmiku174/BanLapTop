@@ -18,7 +18,7 @@ const TrangChu = () => {
 					<h4>Máy tính xách tay</h4>
 					<SliderCompanyLogo/>
 					<SliderProduct/>
-					<Link to="/products" class="btn btn-primary" style={{backgroundColor:'#3ac9c9',marginLeft:"43%",marginTop:'3%'}}>Xem tất cả</Link>
+					<Link to="/products" class="btn btn-primary" style={{backgroundColor:'#3ac9c9',margin:'auto',marginTop:'4%'}}>Xem tất cả</Link>
 				</div>
 			</Container>
 		</div>

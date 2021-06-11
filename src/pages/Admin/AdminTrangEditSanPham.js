@@ -1,8 +1,8 @@
 import React from 'react';
-import SPEditSanPham from '../../components/Admin/SPEditSanPham';
+import SPAddSanPham from '../../components/Admin/SPAddSanPham';
 const AdminTrangEditSanPham = () => {
 	return(
-			<SPEditSanPham/>
+			<SPAddSanPham/>
 		)
 }
 export default AdminTrangEditSanPham;

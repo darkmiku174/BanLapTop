@@ -10,7 +10,7 @@ class ProductItems extends Component {
 		var { product } = this.props;
 		return (
 			<div>
-				<div className="card" style={{ width: '12.5rem', borderRadius: '0' }}>
+				<div className="card" style={{ width: '12.5rem', borderRadius: '0' ,height:'16rem' }}>
 					<Link to={`/detail/${product._id}`}>
 						<div className="card-info">
 							<img src={product.HinhAnh} alt="product" style={{ width: "100%" }} />

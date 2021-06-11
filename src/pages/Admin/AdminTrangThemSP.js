@@ -1,8 +1,8 @@
 import React from 'react';
-import SPThemSanPham from '../../components/Admin/SPThemSanPham';
+import SPAddSanPham from '../../components/Admin/SPAddSanPham';
 const AdminTrangThemSP = () => {
 	return(
-			<SPThemSanPham/>
+			<SPAddSanPham/>
 		)
 }
 export default AdminTrangThemSP;

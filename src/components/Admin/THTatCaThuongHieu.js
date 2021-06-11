@@ -1,183 +1,90 @@
 import React from 'react';
 import SearchBox from '../../components/User/SearchBox'
 import { Row, Container, Table, Button } from 'react-bootstrap';
-const THTatCaThuongHieu = () => {
-	return (
-		<Container>
+import axios from 'axios'
+import { Component } from 'react';
+class THTatCaThuongHieu extends Component {
 
-			<Row>
-				<SearchBox />
-			</Row>
+	constructor(props) {
+		super(props);
+		this.state = {
+			trademarks: []
+		}
+	}
 
-			<Row>
+	componentDidMount() {
+		axios({
+			method: 'GET',
+			url: 'http://localhost:5000/api/trademarks',
+			data: null
+		}).then(res => {
+			console.log(res);
+			this.setState({
+				trademarks: res.data
+			});
+		}).catch(err => {
+			console.log(err);
+		})
+	}
 
-				<Table striped bordered hover style={{ marginTop: '1rem' }}>
-					<thead>
-						<tr>
-							<th>Tên thương hiệu</th>
-							<th>Logo</th>
-							<th>Giới thiệu</th>
-							<th>Chỉnh sửa</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								Lenovo
-					    	</td>
+	showTrademarks(trademarks) {
+		var result = null;
+		if (trademarks.length > 0) {
+			result = trademarks.map((trademark, index) => {
+				return (
+					<tr>
+						<td>
+							Lenovo
+								</td>
 
-							<td>
-								<img src="https://lumen.thinkpro.vn/backend/uploads/brand/icon/2020/8/7/lenovo.png"
-									style={{ width: '5rem', height: '3rem', backgroundColor: 'white' }} />
-							</td>
+						<td>
+							<img src={trademark.Logo}
+								style={{ width: '5rem', height: '3rem', backgroundColor: 'white' }} />
+						</td>
 
-							<td>
-								<p>text</p>
-							</td>
+						<td>
+							<p>{trademark.MoTa}</p>
+						</td>
 
-							<td>
-								<Button style={{ backgroundColor: 'white', color: 'black', fontSize: '12px', border: '1px solid black' }}>Edit</Button>
-							</td>
+						<td>
+							<Button style={{ backgroundColor: 'white', color: 'black', fontSize: '12px', border: '1px solid black' }}>Edit</Button>
+						</td>
 
-						</tr>
-						<tr>
-							<td>
-								Alienware
-					    	</td>
+					</tr>
+				)
+			});
+		}
+		return result;
+	}
 
-							<td>
-								<img src="https://lumen.thinkpro.vn/backend/uploads/brand/icon/2020/8/7/razer.png"
-									style={{ width: '5rem', height: '3rem', backgroundColor: 'white' }} />
-							</td>
+	render() {
+		var {trademarks} =this.state
+		return (
+			<Container>
 
-							<td>
-								<p>text</p>
-							</td>
+				<Row>
+					<SearchBox />
+				</Row>
 
-							<td>
-								<Button style={{ backgroundColor: 'white', color: 'black', fontSize: '12px', border: '1px solid black' }}>Edit</Button>
-							</td>
+				<Row>
 
-						</tr>
-						<tr>
-							<td>
-								Dell
-					    	</td>
+					<Table striped bordered hover style={{ marginTop: '1rem' }}>
+						<thead>
+							<tr>
+								<th>Tên thương hiệu</th>
+								<th>Logo</th>
+								<th>Giới thiệu</th>
+								<th>Chỉnh sửa</th>
+							</tr>
+						</thead>
+						<tbody>
+							{this.showTrademarks(trademarks)}
+						</tbody>
+					</Table>
+				</Row>
 
-							<td>
-								<img src="https://lumen.thinkpro.vn/backend/uploads/brand/icon/2020/8/7/dell.png"
-									style={{ width: '5rem', height: '3rem', backgroundColor: 'white' }} />
-							</td>
-
-							<td>
-								<p>text</p>
-							</td>
-
-							<td>
-								<Button style={{ backgroundColor: 'white', color: 'black', fontSize: '12px', border: '1px solid black' }}>Edit</Button>
-							</td>
-
-						</tr>
-						<tr>
-							<td>
-								Asus
-					    	</td>
-
-							<td>
-								<img src="https://lumen.thinkpro.vn/backend/uploads/brand/icon/2020/8/7/asus.png"
-									style={{ width: '5rem', height: '3rem', backgroundColor: 'white' }} />
-							</td>
-
-							<td>
-								<p>text</p>
-							</td>
-
-							<td>
-								<Button style={{ backgroundColor: 'white', color: 'black', fontSize: '12px', border: '1px solid black' }}>Edit</Button>
-							</td>
-
-						</tr>
-						<tr>
-							<td>
-								Hp
-					    	</td>
-
-							<td>
-								<img src="https://lumen.thinkpro.vn/backend/uploads/brand/icon/2020/8/7/hp.png"
-									style={{ width: '5rem', height: '3rem', backgroundColor: 'white' }} />
-							</td>
-
-							<td>
-								<p>text</p>
-							</td>
-
-							<td>
-								<Button style={{ backgroundColor: 'white', color: 'black', fontSize: '12px', border: '1px solid black' }}>Edit</Button>
-							</td>
-
-						</tr>
-						<tr>
-							<td>
-								Microsoft
-					    	</td>
-
-							<td>
-								<img src="https://lumen.thinkpro.vn/backend/uploads/brand/icon/2020/8/7/microsoft.png"
-									style={{ width: '5rem', height: '3rem', backgroundColor: 'white' }} />
-							</td>
-
-							<td>
-								<p>text</p>
-							</td>
-
-							<td>
-								<Button style={{ backgroundColor: 'white', color: 'black', fontSize: '12px', border: '1px solid black' }}>Edit</Button>
-							</td>
-
-						</tr>
-						<tr>
-							<td>
-								Apple
-					    	</td>
-
-							<td>
-								<img src="https://lumen.thinkpro.vn/backend/uploads/brand/icon/2020/8/7/apple.png"
-									style={{ width: '5rem', height: '3rem', backgroundColor: 'white' }} />
-							</td>
-
-							<td>
-								<p>text</p>
-							</td>
-
-							<td>
-								<Button style={{ backgroundColor: 'white', color: 'black', fontSize: '12px', border: '1px solid black' }}>Edit</Button>
-							</td>
-
-						</tr>
-						<tr>
-							<td>
-								Msi
-					    	</td>
-
-							<td>
-								<img src="https://lumen.thinkpro.vn/backend/uploads/brand/icon/2020/9/24/5f6c4ee7ed9fd_1600933607.png"
-									style={{ width: '5rem', height: '3rem', backgroundColor: 'white' }} />
-							</td>
-
-							<td>
-								<p>text</p>
-							</td>
-
-							<td>
-								<Button style={{ backgroundColor: 'white', color: 'black', fontSize: '12px', border: '1px solid black' }}>Edit</Button>
-							</td>
-
-						</tr>
-					</tbody>
-				</Table>
-			</Row>
-
-		</Container>
-	)
+			</Container>
+		)
+	}
 }
 export default THTatCaThuongHieu;

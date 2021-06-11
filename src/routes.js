@@ -70,17 +70,17 @@ const routes = [
         main: () => < TrangTaiKhoan />
     },
     {
-        path: '/ordersuccess',
+        path: '/orders-uccess',
         exact: false,
         main: () => < TrangDatHangThanhCong />
     },
     {
-        path: '/admin/products/add/:id',
+        path: '/admin-products-add',
         exact: false,
         main: () => < AdminTrangThemSP />
     },
     {
-        path: '/admin/products/edit/:id',
+        path: '/adminedit/',
         exact: false,
         main: () => < AdminTrangEditSanPham />
     },
