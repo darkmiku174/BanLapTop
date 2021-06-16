@@ -45,7 +45,7 @@ class TrangXemChiTietSanPham extends Component {
 									height="70%"
 								/>
 							</Container>
-							
+						</Col>
 						<Col sm={6}>
 							<h3>{product.TenSP}</h3>
 							<div style={{ display: 'flex' }}><p style={{ fontWeight: 'bold' }}>Vi xử lí:  </p> <p style={{marginLeft:'1rem'}}>{product.CPU}</p></div>

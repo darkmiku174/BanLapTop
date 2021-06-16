@@ -27,15 +27,27 @@ class THTatCaThuongHieu extends Component {
 		})
 	}
 
+	onClick = (trademark) => {
+		axios({
+			method: 'DELETE',
+			url: 'http://localhost:5000/api/trademarks/delete/'+trademark._id,
+			data: null
+		}).then(res => {
+			window.location.reload();
+		}).catch(err => {
+			console.log(err);
+		})
+	}
+
 	showTrademarks(trademarks) {
 		var result = null;
 		if (trademarks.length > 0) {
 			result = trademarks.map((trademark, index) => {
 				return (
-					<tr>
+					<tr key = {index}>
 						<td>
 							Lenovo
-								</td>
+						</td>
 
 						<td>
 							<img src={trademark.Logo}
@@ -47,7 +59,7 @@ class THTatCaThuongHieu extends Component {
 						</td>
 
 						<td>
-							<Button style={{ backgroundColor: 'white', color: 'black', fontSize: '12px', border: '1px solid black' }}>Edit</Button>
+							<Button onClick={() =>this.onClick(trademark)} style={{ backgroundColor: 'white', color: 'black', fontSize: '12px', border: '1px solid black' }}>Delete</Button>
 						</td>
 
 					</tr>
@@ -58,7 +70,7 @@ class THTatCaThuongHieu extends Component {
 	}
 
 	render() {
-		var {trademarks} =this.state
+		var { trademarks } = this.state
 		return (
 			<Container>
 

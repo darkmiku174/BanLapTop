@@ -22,6 +22,7 @@ class SPEditSanPham extends Component {
 				HeDieuHanh: "",
 				MauSac: "",
 				DonGia: "",
+				ThuongHieu:"",
 				SoLuong: 0,
 				HinhAnh: ""
 			}
@@ -48,7 +49,7 @@ class SPEditSanPham extends Component {
 		var result = null;
 		if (trademarks.length > 0) {
 			result = trademarks.map((trademark, index) => {
-				return <option key={index} value={trademarks}>{trademark.TenTH}</option>
+				return <option key={index} value={trademark._id} onClick={()=>this.onChange()}>{trademark.TenTH}</option>
 			});
 		}
 		return result;
@@ -80,7 +81,8 @@ class SPEditSanPham extends Component {
 	}
 
 	render() {
-		var { trademarks } = this.state
+		var { trademarks, product } = this.state
+		console.log(product)
 		return (
 			<>
 				<Container>

@@ -64,7 +64,7 @@ class TrangTaiKhoan extends Component {
                                             <div className="col">
                                                 <div className="form-group">
                                                     <label htmlFor="tinhtp" />
-                                                    <input type="text" className="form-control" name="tinhtp" id="tinhtp" aria-describedby="helpId" placeholder="Tỉnh/Thành phố" value={address[4]} />
+                                                    <input type="text" className="form-control" name="tinhtp" id="tinhtp" aria-describedby="helpId" placeholder="Tỉnh/Thành phố" value={address[3]} />
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="phuongxa" />

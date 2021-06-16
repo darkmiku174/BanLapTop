@@ -70,7 +70,7 @@ const routes = [
         main: () => < TrangTaiKhoan />
     },
     {
-        path: '/orders-uccess',
+        path: '/ordersuccess',
         exact: false,
         main: () => < TrangDatHangThanhCong />
     },

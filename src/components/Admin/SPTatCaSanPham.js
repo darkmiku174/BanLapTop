@@ -46,7 +46,7 @@ class SPTatCaSanPham extends Component {
 		var result = null;
 		if (trademarks.length > 0) {
 			result = trademarks.map((trademark, index) => {
-				return <option value={index + 1}>{trademark.TenTH}</option>
+				return <option key={index} value={index + 1}>{trademark.TenTH}</option>
 			});
 		}
 		return result;
@@ -69,7 +69,7 @@ class SPTatCaSanPham extends Component {
 								</Col>
 							</Row>
 						</td>
-						<td><p>{product.ThuongHieu.TenTH}</p></td>
+						<td><p>1</p></td>
 						<td>{product.DonGia}</td>
 						<td>2</td>
 						<td>0</td>
