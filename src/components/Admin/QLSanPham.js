@@ -1,7 +1,6 @@
 import React from 'react';
 import SPTatCaSanPham from '../Admin/SPTatCaSanPham';
 import { Card } from 'react-bootstrap';
-import { Breadcrumbs } from '@material-ui/core';
 
 const QLSanPham = () => {
 	return (

@@ -12,7 +12,6 @@ class TrangXemTatCa extends Component {
 		super(props);
 		this.state = {
 			trademarks: [],
-			checkLogo: [],
 			money: ["Trên 50 triệu", "40 - 50 triệu", "30 - 40 triệu", "20 - 30 triệu", "15 - 20 triệu", "10 - 15 triệu", "dưới 10 triệu"]
 		}
 	}
@@ -32,33 +31,69 @@ class TrangXemTatCa extends Component {
 		})
 	}
 
+	componentDidMount() {
+		axios({
+			method: 'GET',
+			url: 'http://localhost:5000/api/products/trademark/60c1c272217776c06d596e87',
+			data: null
+		}).then(res => {
+			console.log(res);
+			this.setState({
+				products: res.data
+			});
+		}).catch(err => {
+			console.log(err);
+		})
+	}
+
 	showMoney(money) {
+		var tags = JSON.parse(localStorage.getItem("TAGMONEY")) ? JSON.parse(localStorage.getItem("TAGMONEY")) : ""
 		var result = null;
 		if (money.length > 0) {
 			result = money.map((m, index) => {
 				return (
-					<Form.Check inline label={m} name="group1" />
+					<Form.Check
+						inline
+						label={m}
+						name="group1"
+						key={index}
+						defaultChecked={index == tags ? true : false}
+						onClick />
 				)
 			});
 		}
 		return result;
 	}
 
-	showTrademarks(trademarks, check) {
+	showTrademarks(trademarks) {
+		var tags = JSON.parse(localStorage.getItem("TAGTRADEMARK")) ? JSON.parse(localStorage.getItem("TAGTRADEMARK")) : []
 		var result = null;
 		if (trademarks.length > 0) {
 			result = trademarks.map((trademark, index) => {
-				check.push(false);
-				return <Form.Check inline label={trademark.TenTH} key={index} index={index} name="group1" />
+				return (
+					<Form.Check
+						inline
+						label={trademark.TenTH}
+						key={index}
+						defaultChecked={this.findTrademark(tags, trademark)}
+						name="group1" />
+				)
 			});
 		}
 		return result;
 	}
 
+	findTrademark = (tags, trademark) => {
+		var result = false
+		tags.map((tag, index) => {
+			if (tag._id === trademark._id)
+				result = true
+		})
+		return result
+	}
 
 	render() {
-		var { trademarks, money, checkLogo } = this.state
-		console.log(checkLogo)
+		var { trademarks, money } = this.state
 		return (
 			<>
 				<Container>
@@ -71,14 +106,13 @@ class TrangXemTatCa extends Component {
 						<Col md={2} style={{ border: '1px solid white' }}>
 							<Row style={{ marginBottom: '1rem', color: 'white' }}>
 								.
-						</Row>
+							</Row>
 							<Row style={{
 								justifyContent: 'space-between',
 								border: '1px solid #d4d4d4',
 								padding: '0.5rem'
 							}}>
 								<p style={{ fontWeight: 'bold', fontSize: '14px' }}>Bộ lọc</p>
-								<a href="#" style={{ fontSize: '13px' }}>bỏ lọc</a>
 							</Row>
 							<Row style={{
 								justifyContent: 'space-between',
@@ -88,7 +122,7 @@ class TrangXemTatCa extends Component {
 							}}>
 								<Form style={{ display: 'flex', flexDirection: 'column' }}>
 									<p style={{ fontWeight: 'bold', fontSize: '14px' }}>Thương hiệu</p>
-									{this.showTrademarks(trademarks, checkLogo)}
+									{this.showTrademarks(trademarks)}
 								</Form>
 							</Row>
 							<Row style={{

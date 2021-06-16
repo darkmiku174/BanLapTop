@@ -2,34 +2,69 @@ import React from 'react';
 import { Component } from 'react';
 import { FaSearch, FaUserAlt, FaShoppingBag } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
+import axios from 'axios';
+import Select from 'react-select'
 
 class NavigationBar extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            search: "",
-            check: JSON.parse(localStorage.getItem("USER")) ? true : false
+            check: JSON.parse(localStorage.getItem("USER")) ? true : false,
+            products: [],
+            search: JSON.parse(localStorage.getItem("SEARCH")) ? JSON.parse(localStorage.getItem("SEARCH")) : [],
+            select: "",
         }
     }
 
-    componentDidMount(){
-        // window.location.reload();
-    }
+    componentDidMount() {
 
-    onSeacrh = (e) => {
-        this.setState({
-            search: e.target.value
+        axios({
+            method: 'GET',
+            url: 'http://localhost:5000/api/products',
+            data: null
+        }).then(res => {
+            console.log(res);
+            this.setState({
+                products: res.data
+            });
+
+        }).catch(err => {
+            console.log(err);
         })
     }
 
-    onClick = () =>{
+    componentDidUpdate() {
+        var { products } = this.state
+        localStorage.setItem("SEARCH", JSON.stringify([]))
+        var result = null;
+        if (products.length > 0) {
+            result = products.map((product, index) => {
+                var oldSearch = JSON.parse(localStorage.getItem("SEARCH"))
+                oldSearch.push({
+                    label: product.TenSP,
+                    value: product._id
+                })
+                localStorage.setItem("SEARCH", JSON.stringify(oldSearch))
+            });
+        }
+        return result;
+    }
+
+    onSelect = (e) => {
+        this.setState({
+            select: "/detail/" + e.value
+        })
+    }
+
+
+    onClick = () => {
         localStorage.clear();
         window.location.reload();
     }
 
     render() {
-        var { search, check } = this.state;
+        var { check, select, search } = this.state;
         return (
             <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
                 <div class="mx-auto order-0" >
@@ -49,7 +84,7 @@ class NavigationBar extends Component {
                                 <div class="dropdown-content">
                                     <Link to="/login" hidden={check}>
                                         <button >Đăng nhập</button>
-                                        </Link>
+                                    </Link>
                                     <Link to="/">
                                         <button onClick={this.onClick}>Đăng xuất</button>
                                     </Link>
@@ -59,10 +94,16 @@ class NavigationBar extends Component {
                     </ul>
                 </div>
                 <div class="buscar-caja">
-                    <input type="text" name="Search" class="buscar-txt" placeholder="Search..." onChange={this.onSeacrh} />
-                    <a class="buscar-btn">
+                    <Select
+                        options={search}
+                        className="buscar-txt"
+                        placeholder="Search laptop"
+                        onChange={this.onSelect}
+
+                    />
+                    <Link to={select ? select : ""} class="buscar-btn">
                         <FaSearch />
-                    </a>
+                    </Link> */
                 </div>
             </nav>
         )

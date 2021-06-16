@@ -9,7 +9,7 @@ class TrangDatHangThanhCong extends Component {
 		super(props);
 		this.state = {
 			user: JSON.parse(localStorage.getItem("USER")) ? JSON.parse(localStorage.getItem("USER")) : [],
-			orderSuccess: JSON.parse(localStorage.getItem("ORDERSUCCESS")) ? JSON.parse(localStorage.getItem("ORDERSUCCESS")) : [],
+			orderSuccess: JSON.parse(localStorage.getItem("ORDERSUCCESS")) ? JSON.parse(localStorage.getItem("ORDERSUCCESS")) : []
 		}
 	}
 
@@ -25,10 +25,11 @@ class TrangDatHangThanhCong extends Component {
 
 	render() {
 		var { user, orderSuccess } = this.state;
+		console.log(orderSuccess)
 		return (
 			<div style={{ display: 'flex', flexDirection: 'column',width:'40%',marginLeft:'30%',marginTop:'2%'}} fluid>
 				<Container style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', paddingBottom: '1rem', paddingTop: '2rem' }}>
-					<p style={{ fontSize: '20px',fontWeight:'bold' }}>{orderSuccess.length > 0 ? "Đã đặt hàng thành công" : "Đặt hàng thất bại"}</p>
+					<p style={{ fontSize: '20px',fontWeight:'bold' }}>{orderSuccess ? "Đã đặt hàng thành công" : "Đặt hàng thất bại"}</p>
 					<div style={{
 						
 						borderRadius: '50rem',
@@ -38,10 +39,13 @@ class TrangDatHangThanhCong extends Component {
 						paddingTop: '1.2rem', marginTop: '1rem',
 						marginBottom: '1rem'
 					}}>
-						{/* <FaCheck style={{ marginLeft: '1.4rem', fontSize: '1.5rem', color: '#06c1d4' }} /> */}
-						<FaTimes style={{marginLeft:'1.2rem',fontSize: '1.5rem', color: 'red' }} />
+					{
+						orderSuccess ? 
+						<FaCheck style={{ marginLeft: '1.4rem', fontSize: '1.5rem', color: '#06c1d4' }} />
+						: <FaTimes style={{marginLeft:'1.2rem',fontSize: '1.5rem', color: 'red' }} />
+					}
 					</div>
-					<p>{orderSuccess.length > 0 ? "Cảm ơn khách hàng đã đặt hàng. Trong vòng 24h nhân viên sẽ gọi điện xác nhận đặt hàng cho anh chị" : "Vui lòng đặt hàng lại"}</p>
+					<p>{orderSuccess ? "Cảm ơn khách hàng đã đặt hàng. Trong vòng 24h nhân viên sẽ gọi điện xác nhận đặt hàng cho anh chị" : "Vui lòng đặt hàng lại"}</p>
 				</Container>
 				<Container style={{display: 'flex', flexDirection: 'column',border:'3px solid #3ac9c9',borderRadius:'10px',padding:'1rem'}}>
 					<p style={{fontWeight:'bold',fontSize:'16px'}}>Thông tin đặt hàng</p>
@@ -51,11 +55,11 @@ class TrangDatHangThanhCong extends Component {
 					</div>
 					<div className="details-receiver" style={{ display: 'flex' }}>
 						<p>Nhận hàng tại:</p>
-						<p style={{ marginLeft: '0.5rem', fontWeight: 'bold' }}>{orderSuccess.length > 0 ? orderSuccess.DiaChi : ""}</p>
+						<p style={{ marginLeft: '0.5rem', fontWeight: 'bold' }}>{orderSuccess ? orderSuccess.DiaChi : ""}</p>
 					</div>
 					<div className="details-receiver" style={{ display: 'flex' }}>
 						<p>Tổng tiền thanh toán:</p>
-						<p style={{ marginLeft: '0.5rem', fontWeight: 'bold' }}>{this.showTotalAmount(orderSuccess.length > 0 ? orderSuccess.DanhSachSanPham : [])}</p>
+						<p style={{ marginLeft: '0.5rem', fontWeight: 'bold' }}>{this.showTotalAmount(orderSuccess ? orderSuccess.DanhSachSanPham : [])}</p>
 					</div>
 				</Container>
 			</div>

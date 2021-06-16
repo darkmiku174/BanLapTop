@@ -13,7 +13,7 @@ const TrangChu = () => {
 	  	</div>
 	  	<div className="body">
 	  		<Container style={{display:'flex',flexDirection:'column'}}>
-				<SliderCommercial/>
+				{/* <SliderCommercial/> */}
 				<div>
 					<h4>Máy tính xách tay</h4>
 					<SliderCompanyLogo/>

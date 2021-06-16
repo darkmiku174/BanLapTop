@@ -26,12 +26,19 @@ class SliderCompanyLogo extends Component {
 			console.log(err);
 		})
 	}
+
+	onClickLogo = (trademark) => {
+		var oldTag = JSON.parse(localStorage.getItem("TAGTRADEMARK")) ? JSON.parse(localStorage.getItem("TAGTRADEMARK")) : []
+		oldTag.push(trademark)
+		localStorage.setItem("TAGTRADEMARK", JSON.stringify(oldTag))
+	}
+
 	showLogos(trademarks) {
 		var result = null;
 		if (trademarks.length > 0) {
 			result = trademarks.map((trademark, index) => {
 				return (
-					<Link to="/products">
+					<Link to="/products" key={index} onClick={() => this.onClickLogo(trademark)}>
 						<Card style={{ width: '7rem', marginLeft: "0.3rem" }}>
 							<Card.Img variant="top" src={trademark.Logo} />
 						</Card>
@@ -41,12 +48,18 @@ class SliderCompanyLogo extends Component {
 		}
 		return result;
 	}
+
+	onClickMoney = (index) => {
+		localStorage.setItem("TAGMONEY", JSON.stringify(index))
+	}
+
+
 	showMoney(money) {
 		var result = null;
 		if (money.length > 0) {
 			result = money.map((m, index) => {
 				return (
-					<Link to="/products" label={m}>
+					<Link to="/products" label={m} key={index} onClick={() => this.onClickMoney(index)} >
 						<Card className="card-price" style={{ marginLeft: '1rem', width: '7rem', height: '2.4rem', justifyContent: 'center', textAlign: 'center', fontWeight: 'bold', fontSize: '13px', padding: '0.2rem' }}>
 							{m}
 						</Card>

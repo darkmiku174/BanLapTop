@@ -27,6 +27,7 @@ class SliderProduct extends Component {
 		})
 	}
 
+
 	
 
 	render() {

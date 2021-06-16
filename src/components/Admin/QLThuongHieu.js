@@ -1,7 +1,6 @@
 import React from 'react';
 import THTatCaThuongHieu from '../Admin/THTatCaThuongHieu';
 import { Card } from 'react-bootstrap';
-import { Breadcrumbs } from '@material-ui/core';
 
 const QLThuongHieu = () => {
 	return (

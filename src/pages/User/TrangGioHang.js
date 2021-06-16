@@ -69,7 +69,6 @@ class TrangGioHang extends Component {
         cart.splice(index, 1);
         localStorage.setItem("CART", JSON.stringify(cart))
         window.location.reload();
-
     }
 
     findIndex = (products, id) => {
