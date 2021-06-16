@@ -26,24 +26,25 @@ class TrangDatHangThanhCong extends Component {
 	render() {
 		var { user, orderSuccess } = this.state;
 		return (
-			<div style={{ display: 'flex', flexDirection: 'column' }}>
-				<Container style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', paddingBottom: '1rem', paddingTop: '5rem' }}>
-					<p style={{ fontSize: '20px' }}>{orderSuccess.length > 0 ? "Đã đặt hàng thành công" : "Đặt hàng thất bại"}</p>
+			<div style={{ display: 'flex', flexDirection: 'column',width:'40%',marginLeft:'30%',marginTop:'2%'}} fluid>
+				<Container style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', paddingBottom: '1rem', paddingTop: '2rem' }}>
+					<p style={{ fontSize: '20px',fontWeight:'bold' }}>{orderSuccess.length > 0 ? "Đã đặt hàng thành công" : "Đặt hàng thất bại"}</p>
 					<div style={{
+						
 						borderRadius: '50rem',
 						height: '4rem', width: '4rem',
 						backgroundColor: '#ebf5f7',
-						zIndex: '1', marginLeft: '46%',
+						zIndex: '1', marginLeft: '42%',
 						paddingTop: '1.2rem', marginTop: '1rem',
 						marginBottom: '1rem'
 					}}>
 						{/* <FaCheck style={{ marginLeft: '1.4rem', fontSize: '1.5rem', color: '#06c1d4' }} /> */}
-						<FaTimes style={{ marginLeft: '1.4rem', fontSize: '1.5rem', color: 'red' }} />
+						<FaTimes style={{marginLeft:'1.2rem',fontSize: '1.5rem', color: 'red' }} />
 					</div>
 					<p>{orderSuccess.length > 0 ? "Cảm ơn khách hàng đã đặt hàng. Trong vòng 24h nhân viên sẽ gọi điện xác nhận đặt hàng cho anh chị" : "Vui lòng đặt hàng lại"}</p>
 				</Container>
-				<Container style={{ paddingTop: '0rem', display: 'flex', flexDirection: 'column', marginLeft: '9.9rem', paddingLeft: '5rem' }}>
-					<p>Thông tin đặt hàng</p>
+				<Container style={{display: 'flex', flexDirection: 'column',border:'3px solid #3ac9c9',borderRadius:'10px',padding:'1rem'}}>
+					<p style={{fontWeight:'bold',fontSize:'16px'}}>Thông tin đặt hàng</p>
 					<div className="details-receiver" style={{ display: 'flex' }}>
 						<p>Người nhận:</p>
 						<p style={{ marginLeft: '0.5rem', fontWeight: 'bold' }}>{user.HoTen}</p>
