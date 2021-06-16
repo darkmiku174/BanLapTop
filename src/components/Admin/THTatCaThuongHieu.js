@@ -74,8 +74,11 @@ class THTatCaThuongHieu extends Component {
 		return (
 			<Container>
 
-				<Row>
+				<Row style={{display:'flex',justifyContent:'space-between'}}>
 					<SearchBox />
+					<a href="/addthuonghieu">
+						<Button style={{backgroundColor:'#3ac9c9'}}>Thêm thương hiệu</Button>
+					</a>
 				</Row>
 
 				<Row>

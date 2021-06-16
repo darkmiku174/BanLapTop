@@ -74,7 +74,7 @@ class SPTatCaSanPham extends Component {
 						<td>2</td>
 						<td>0</td>
 						<td style={{ display: 'flex', border: '0px', padding: '2rem', justifyContent: 'space-around' }}>
-							<a href=""><FaPen /></a>
+							// <a href=""><FaPen /></a>
 							<a href=""><FaTrash /></a>
 						</td>
 					</tr>

@@ -89,25 +89,25 @@ class SPEditSanPham extends Component {
 					<div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem' }}>
 						<p style={{ color: 'white', fontSize: '23px' }}>Đơn hàng</p>
 					</div>
-					<div style={{ display: 'flex', flexDirection: 'column' }}>
-						<Container style={{ backgroundColor: '#f7f7f7' }}>
+					<div style={{ display: 'flex', flexDirection: 'column'}}>
+						<Container style={{ backgroundColor: 'white' }}>
 							{/*Parent Row 1*/}
-							<Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', backgroundColor: 'white', padding: '1rem' }}>
+							<Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', backgroundColor: 'white', padding: '1rem',border:'3px solid #3ac9c9',borderRadius:'1rem' }}>
 								<h5>Thông tin chung</h5>
 								<Container style={{ marginTop: '3rem' }}>
 									<Col>
 										<div className="parent-row-1-container" style={{ display: 'flex', justifyContent: 'space-between' }}>
 											<div className="child-row-container">
 												{/*Child Row 1*/}
-												<Row style={{ marginTop: '2rem' }}>
+												<Row style={{ marginTop: '0rem' }}>
 													<Col md={4}>
-														<p style={{ marginTop: '20%', fontSize: '12px' }}>Hình ảnh sản phẩm</p>
+														<p style={{ fontSize: '12px' }}>Hình ảnh sản phẩm</p>
 													</Col>
 													<Col md={8}>
 														<div className="img-container">
 															<form>
 																<img src="#" style={{ width: '15rem', height: '15rem' }} />
-																<input type="file" />
+																<input type="text" placeholder="Nhập đường dẫn hình ảnh" style={{ width: '15rem',border:'1px solid #c0c0c0' }} />
 															</form>
 														</div>
 													</Col>
@@ -142,7 +142,7 @@ class SPEditSanPham extends Component {
 											</div>
 
 											<div className="product-details-table">
-												<Table striped bordered style={{ width: '30rem' }}>
+												<Table striped bordered style={{ width: '30rem',border:'2px solid #3ac9c9' }}>
 													<thead>
 														<tr>
 															<th></th>
@@ -219,11 +219,11 @@ class SPEditSanPham extends Component {
 							</Row>
 
 							{/*Parent Row 2*/}
-							<Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', backgroundColor: 'white', padding: '1rem' }}>
+							<Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', backgroundColor: 'white', padding: '1rem',border:'3px solid #3ac9c9',borderRadius:'1rem' }}>
 								<h5>Thông tin bán hàng</h5>
-								<Container style={{ marginTop: '3rem' }}>
+								<Container style={{ marginTop: '1rem' }}>
 									{/*Child Row 1*/}
-									<Row style={{ marginTop: '2rem' }}>
+									<Row style={{ marginTop: '1rem' }}>
 										<Col md={2}>
 											<p style={{ fontSize: '12px' }}>Giá</p>
 										</Col>
@@ -254,7 +254,7 @@ class SPEditSanPham extends Component {
 							</Row>
 						</Container>
 
-						<Container style={{ margin: '3rem' }}>
+						<Container style={{marginLeft:'4rem' }}>
 							<a href="/admin">
 								<Button style={{
 									position: 'relative',
@@ -272,7 +272,8 @@ class SPEditSanPham extends Component {
 								float: 'right',
 								marginRight: '4rem',
 								width: '7rem',
-								fontSize: '12px'
+								fontSize: '12px',
+								backgroundColor:'#3ac9c9'
 							}}>Thêm</Button>
 							</Link>
 						</Container>

@@ -11,6 +11,7 @@ import TrangDangKy from './pages/User/TrangDangKy';
 import TrangGioHang from './pages/User/TrangGioHang';
 import AdminTrangThemSP from './pages/Admin/AdminTrangThemSP';
 import AdminTrangChu from './pages/Admin/AdminTrangChu';
+import AdminTrangThemTH from './pages/Admin/AdminTrangThemTH';
 import AdminTrangEditSanPham from './pages/Admin/AdminTrangEditSanPham';
 import TrangDatHangThanhCong from './pages/User/TrangDatHangThanhCong';
 import { Redirect } from 'react-router';
@@ -83,6 +84,11 @@ const routes = [
         path: '/adminedit/',
         exact: false,
         main: () => < AdminTrangEditSanPham />
+    },
+    {
+        path: '/addthuonghieu/',
+        exact: false,
+        main: () => < AdminTrangThemTH />
     },
     // {
     //     path: '',
