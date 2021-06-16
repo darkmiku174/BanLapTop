@@ -71,7 +71,7 @@ const routes = [
         main: () => < TrangTaiKhoan />
     },
     {
-        path: '/ordersuccess',
+        path: '/order-success',
         exact: false,
         main: () => < TrangDatHangThanhCong />
     },
@@ -81,12 +81,7 @@ const routes = [
         main: () => < AdminTrangThemSP />
     },
     {
-        path: '/adminedit/',
-        exact: false,
-        main: () => < AdminTrangEditSanPham />
-    },
-    {
-        path: '/addthuonghieu/',
+        path: '/add-trademark/',
         exact: false,
         main: () => < AdminTrangThemTH />
     },

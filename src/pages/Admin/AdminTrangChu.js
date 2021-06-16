@@ -40,13 +40,6 @@ const AdminTrangChu = () => {
                     </div>
                 </nav>
             </div>
-            <div>
-                <Navbar bg="dark" variant="dark">
-                    <Navbar.Brand href="#home" style={{ float: 'right' }}>
-                        <p>TLT</p>
-                    </Navbar.Brand>
-                </Navbar>
-            </div>
             <div className="mcw">
                 {active === "QLDH" && <QLDonHang />}
                 {active === "QLSP" && <QLSanPham />}

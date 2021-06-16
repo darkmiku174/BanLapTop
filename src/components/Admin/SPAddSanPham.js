@@ -106,8 +106,8 @@ class SPEditSanPham extends Component {
 													<Col md={8}>
 														<div className="img-container">
 															<form>
-																<img src="#" style={{ width: '15rem', height: '15rem' }} />
-																<input type="text" placeholder="Nhập đường dẫn hình ảnh" style={{ width: '15rem',border:'1px solid #c0c0c0' }} />
+																<img src={product.HinhAnh} style={{ width: '15rem', height: '15rem' }} />
+																<input name="HinhAnh" type="text" placeholder="Nhập đường dẫn hình ảnh" style={{ width: '15rem',border:'1px solid #c0c0c0' }} onChange={this.onChange} />
 															</form>
 														</div>
 													</Col>

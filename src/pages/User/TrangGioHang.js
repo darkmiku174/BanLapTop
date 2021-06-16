@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { Container, Col, Row, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { actDeleteProductInCart } from '../../actions/index';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 class TrangGioHang extends Component {
 
     showProducts(cart) {
@@ -25,12 +25,12 @@ class TrangGioHang extends Component {
                             }}>
                                 {product.product.TenSP}
                             </p>
-                            <div style={{display:'flex'}}>
+                            <div style={{ display: 'flex' }}>
                                 <p>Đơn giá:</p>
-                                <p style={{marginLeft:'1rem'}}>29000000</p>
+                                <p style={{ marginLeft: '1rem' }}>29000000</p>
                             </div>
                             <p>x{product.quantity}</p>
-                            <a href="#">Xóa</a>
+                            <button key={index} onClick={() => this.onClick(cart, product)}>Xóa</button>
                         </Col>
 
                         {/*Col 3*/}
@@ -64,6 +64,24 @@ class TrangGioHang extends Component {
         return total;
     }
 
+    onClick = (cart, product) => {
+        var index = this.findIndex(cart, product)
+        cart.splice(index, 1);
+        localStorage.setItem("CART", JSON.stringify(cart))
+        window.location.reload();
+
+    }
+
+    findIndex = (products, id) => {
+        var result = -1;
+        products.forEach((product, index) => {
+            if (product.id === id) {
+                result = index;
+            }
+        });
+        return result;
+    }
+
     render() {
         var { cart } = this.props
         return (
@@ -95,7 +113,7 @@ class TrangGioHang extends Component {
                                         backgroundColor: '#3ac9c9'
                                     }}>
                                         Tiến hành đặt hàng
-                                  </Button>
+                                    </Button>
                                 </Link>
                             </Row>
                         </Col>

@@ -4,7 +4,7 @@ import { FaTrash, FaPen } from 'react-icons/fa';
 import { Pagination } from '@material-ui/lab';
 import { Component } from 'react';
 import axios from "axios"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 class SPTatCaSanPham extends Component {
 
 	constructor(props) {
@@ -52,6 +52,17 @@ class SPTatCaSanPham extends Component {
 		return result;
 	}
 
+	onClick = (product) => {
+		axios({
+			method: 'DELETE',
+			url: 'http://localhost:5000/api/products/delete/'+product._id,
+			data: null
+		}).then(res => {
+			window.location.reload();
+		}).catch(err => {
+			console.log(err);
+		})
+	}
 
 	showProducts(products) {
 		var result = null;
@@ -74,8 +85,7 @@ class SPTatCaSanPham extends Component {
 						<td>2</td>
 						<td>0</td>
 						<td style={{ display: 'flex', border: '0px', padding: '2rem', justifyContent: 'space-around' }}>
-							// <a href=""><FaPen /></a>
-							<a href=""><FaTrash /></a>
+							<button onClick={() => this.onClick(product)} key={index}><FaTrash /></button>
 						</td>
 					</tr>
 				)
@@ -123,7 +133,7 @@ class SPTatCaSanPham extends Component {
 								<Link to="/admin-products-add">
 									<Button className="btn" style={{ fontSize: '12px', width: '5rem', backgroundColor: '#3ac9c9' }}>Thêm</Button>
 								</Link>
-								
+
 							</Col>
 							<Col md={9}>
 
@@ -142,7 +152,7 @@ class SPTatCaSanPham extends Component {
 								<th style={{ fontSize: '13px' }}>Giá</th>
 								<th style={{ fontSize: '13px' }}>Kho hàng</th>
 								<th style={{ fontSize: '13px' }}>Đã bán</th>
-								<th>Sửa thông tin</th>
+								<th>Xoá</th>
 							</tr>
 						</thead>
 						<tbody>

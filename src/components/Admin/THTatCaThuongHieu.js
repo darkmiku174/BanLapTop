@@ -3,6 +3,7 @@ import SearchBox from '../../components/User/SearchBox'
 import { Row, Container, Table, Button } from 'react-bootstrap';
 import axios from 'axios'
 import { Component } from 'react';
+import {Link} from 'react-router-dom'
 class THTatCaThuongHieu extends Component {
 
 	constructor(props) {
@@ -76,9 +77,9 @@ class THTatCaThuongHieu extends Component {
 
 				<Row style={{display:'flex',justifyContent:'space-between'}}>
 					<SearchBox />
-					<a href="/addthuonghieu">
+					<Link to="/add-trademark">
 						<Button style={{backgroundColor:'#3ac9c9'}}>Thêm thương hiệu</Button>
-					</a>
+					</Link>
 				</Row>
 
 				<Row>
@@ -89,7 +90,7 @@ class THTatCaThuongHieu extends Component {
 								<th>Tên thương hiệu</th>
 								<th>Logo</th>
 								<th>Giới thiệu</th>
-								<th>Chỉnh sửa</th>
+								<th>Xoá</th>
 							</tr>
 						</thead>
 						<tbody>
