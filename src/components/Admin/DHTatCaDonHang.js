@@ -1,45 +1,70 @@
 import React from 'react';
 import SearchBox from '../../components/User/SearchBox'
-import { Row, Col, Container, Table } from 'react-bootstrap';
+import { Row, Container, Table } from 'react-bootstrap';
 import { Component } from 'react';
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 class DHTatCaDonHang extends Component {
-	
+
 	constructor(props) {
 		super(props);
 		this.state = {
-			products: []
+			orders: []
 		}
 	}
 
 	componentDidMount() {
 		axios({
 			method: 'GET',
-			url: 'http://localhost:5000/api/products',
+			url: 'http://localhost:5000/api/orders',
 			data: null
 		}).then(res => {
 			console.log(res);
 			this.setState({
-				products: res.data
+				orders: res.data
 			});
 		}).catch(err => {
 			console.log(err);
 		})
 	}
 
-	showProducts(products, check) {
+	showOrders(orders) {
 		var result = null;
-		if (products.length > 0) {
-			result = products.map((product, index) => {
-				if (check != "1" && index>=10)
-					return null
-				return null
+		if (orders.length > 0) {
+			result = orders.map((order, index) => {
+				return (
+					<tr>
+						<td className="id">
+							<p>{order._id}</p>
+						</td>
+
+						<td className="user">
+							<p>{order.User.HoTen}</p>
+						</td>
+
+						<td className="ngayban">
+							<p>{order.NgayBan}</p>
+						</td>
+
+						<td className="trangthai">
+							<p>Đã giao</p>
+						</td>
+
+						
+
+						<td className="thaotac">
+							<Link to={"/admin-order-details/"+order._id}>Xem chi tiết</Link>
+						</td>
+
+					</tr>
+				)
 			});
 		}
 		return result;
 	}
-	
+
 	render() {
+		var { orders } = this.state
 		return (
 			<Container style={{ marginTop: '2rem' }}>
 
@@ -53,36 +78,14 @@ class DHTatCaDonHang extends Component {
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Tổng đơn</th>
-								<th>Trạng thái</th>
 								<th>User</th>
-								<th>Thao tác</th>
+								<th>Ngày Mua</th>
+								<th>Trạng thái</th>
+								<th>Xem chi tiết đơn hàng</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-
-								<td className="id">
-									<p>DH001</p>
-								</td>
-
-								<td className="tongdon">
-									<p>21.000.000 đ</p>
-								</td>
-
-								<td className="trangthai">
-									<p>Đã giao</p>
-								</td>
-
-								<td className="user">
-									<p>Nguyễn văn A</p>
-								</td>
-
-								<td className="thaotac">
-									<a href="/admin-order-details">Xem chi tiết</a>
-								</td>
-
-							</tr>
+							{this.showOrders(orders)}
 						</tbody>
 					</Table>
 				</Row>

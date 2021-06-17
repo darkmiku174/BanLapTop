@@ -13,7 +13,6 @@ import AdminTrangThemSP from './pages/Admin/AdminTrangThemSP';
 import AdminTrangChu from './pages/Admin/AdminTrangChu';
 import AdminTrangChiTietDonHang from './pages/Admin/AdminTrangChiTietDonHang';
 import AdminTrangThemTH from './pages/Admin/AdminTrangThemTH';
-import AdminTrangEditSanPham from './pages/Admin/AdminTrangEditSanPham';
 import TrangDatHangThanhCong from './pages/User/TrangDatHangThanhCong';
 import { Redirect } from 'react-router';
 
@@ -87,9 +86,9 @@ const routes = [
         main: () => < AdminTrangThemTH />
     },
     {
-        path: '/admin-order-details/',
+        path: '/admin-order-details/:id',
         exact: false,
-        main: () => < AdminTrangChiTietDonHang />
+        main: ({ match }) => < AdminTrangChiTietDonHang match={match} />
     },
     // {
     //     path: '',

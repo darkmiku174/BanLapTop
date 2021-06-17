@@ -95,7 +95,8 @@ class NavigationBar extends Component {
                 </div>
                 <div class="buscar-caja">
                     <Select
-                        
+                        menuPortalTarget={document.body}
+                        styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }}
                         options={search}
                         className="buscar-txt"
                         placeholder="Search laptop"

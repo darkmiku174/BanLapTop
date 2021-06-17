@@ -31,21 +31,6 @@ class TrangXemTatCa extends Component {
 		})
 	}
 
-	componentDidMount() {
-		axios({
-			method: 'GET',
-			url: 'http://localhost:5000/api/products/trademark/60c1c272217776c06d596e87',
-			data: null
-		}).then(res => {
-			console.log(res);
-			this.setState({
-				products: res.data
-			});
-		}).catch(err => {
-			console.log(err);
-		})
-	}
-
 	showMoney(money) {
 		var tags = JSON.parse(localStorage.getItem("TAGMONEY")) ? JSON.parse(localStorage.getItem("TAGMONEY")) : ""
 		var result = null;
