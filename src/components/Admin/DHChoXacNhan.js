@@ -1,12 +1,13 @@
 import React from 'react';
 import SearchBox from '../../components/User/SearchBox'
-import { Row, Col, Container, Table,Form } from 'react-bootstrap';
+import { Row, Col, Container, Table,Form,Button } from 'react-bootstrap';
 const DHChoXacNhan = () => {
 	return (
-		<Container style={{ marginTop: '2rem' }}>
-
-				<Row>
+				<Container style={{ marginTop: '2rem' }}>
+				
+				<Row style={{display:'flex',justifyContent:'space-between'}}>
 					<SearchBox />
+					<Button style={{backgroundColor:'#3ac9c9'}}>Cập nhật</Button>
 				</Row>
 
 				<Row>
@@ -15,10 +16,10 @@ const DHChoXacNhan = () => {
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Tổng đơn</th>
-								<th>Trạng thái</th>
 								<th>User</th>
-								<th>Thao tác</th>
+								<th>Ngày Mua</th>
+								<th>Trạng thái</th>
+								<th>Xem chi tiết đơn hàng</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -35,8 +36,12 @@ const DHChoXacNhan = () => {
 								<td className="trangthai">
 									<Form.Group controlId="exampleForm.ControlSelect1">
 									    <Form.Control as="select">
+									      <option>Chờ xác nhận</option>
+									      <option>Chờ lấy hàng</option>
+									      <option>Đang giao</option>
 									      <option>Đã giao</option>
-									      <option>Chưa giao</option>
+									      <option>Đơn hủy</option>
+									      <option>Trà hàng/Hoàn tiền</option>
 									    </Form.Control>
 									</Form.Group>
 								</td>
