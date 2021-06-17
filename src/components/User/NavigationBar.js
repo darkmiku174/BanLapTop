@@ -95,6 +95,7 @@ class NavigationBar extends Component {
                 </div>
                 <div class="buscar-caja">
                     <Select
+                        
                         options={search}
                         className="buscar-txt"
                         placeholder="Search laptop"

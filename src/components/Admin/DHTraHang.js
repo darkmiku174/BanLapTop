@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBox from '../../components/User/SearchBox'
-import { Row, Col, Container, Table } from 'react-bootstrap';
+import { Row, Col, Container, Table,Form } from 'react-bootstrap';
 const DHTraHang = () => {
 	return (
 		<Container style={{ marginTop: '2rem' }}>
@@ -33,7 +33,12 @@ const DHTraHang = () => {
 								</td>
 
 								<td className="trangthai">
-									<p>Đã giao</p>
+									<Form.Group controlId="exampleForm.ControlSelect1">
+									    <Form.Control as="select">
+									      <option>Đã giao</option>
+									      <option>Chưa giao</option>
+									    </Form.Control>
+									</Form.Group>
 								</td>
 
 								<td className="user">
@@ -41,7 +46,7 @@ const DHTraHang = () => {
 								</td>
 
 								<td className="thaotac">
-									<a href="#chitiet">Xem chi tiết</a>
+									<a href="/admin-order-details">Xem chi tiết</a>
 								</td>
 
 							</tr>

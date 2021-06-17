@@ -79,7 +79,7 @@ class DHTatCaDonHang extends Component {
 								</td>
 
 								<td className="thaotac">
-									<a href="#chitiet">Xem chi tiết</a>
+									<a href="/admin-order-details">Xem chi tiết</a>
 								</td>
 
 							</tr>

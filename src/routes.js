@@ -11,6 +11,7 @@ import TrangDangKy from './pages/User/TrangDangKy';
 import TrangGioHang from './pages/User/TrangGioHang';
 import AdminTrangThemSP from './pages/Admin/AdminTrangThemSP';
 import AdminTrangChu from './pages/Admin/AdminTrangChu';
+import AdminTrangChiTietDonHang from './pages/Admin/AdminTrangChiTietDonHang';
 import AdminTrangThemTH from './pages/Admin/AdminTrangThemTH';
 import AdminTrangEditSanPham from './pages/Admin/AdminTrangEditSanPham';
 import TrangDatHangThanhCong from './pages/User/TrangDatHangThanhCong';
@@ -84,6 +85,11 @@ const routes = [
         path: '/add-trademark/',
         exact: false,
         main: () => < AdminTrangThemTH />
+    },
+    {
+        path: '/admin-order-details/',
+        exact: false,
+        main: () => < AdminTrangChiTietDonHang />
     },
     // {
     //     path: '',
